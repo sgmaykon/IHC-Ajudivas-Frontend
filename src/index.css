@@ -1,0 +1,132 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+/**
+ * Ajudivas — Design tokens (fonte: Figma Projeto IHC, fileKey h2E2rFkNY3qruR8t0gIyAl)
+ */
+:root {
+  color-scheme: light;
+
+  --ajd-color-primary: #6750a4;
+  --ajd-color-primary-hover: #5c4696;
+  --ajd-color-primary-active: #4f378b;
+  --ajd-color-on-primary: #ffffff;
+  --ajd-color-highlight-bg: #eaddff;
+  --ajd-color-highlight-text: #4f378b;
+  --ajd-color-primary-soft: #f3eef8;
+
+  --ajd-color-surface: #f3edf7;
+  --ajd-color-surface-raised: #ffffff;
+  --ajd-color-surface-sunken: rgba(0, 0, 0, 0.05);
+  --ajd-color-outline: #e7e1f0;
+  --ajd-color-outline-strong: #d0bcff;
+  --ajd-color-scrim: rgba(33, 29, 41, 0.55);
+  --ajd-color-overlay-photo: rgba(243, 237, 247, 0.75);
+
+  --ajd-color-text-primary: #211d29;
+  --ajd-color-text-secondary: #625b71;
+
+  --ajd-color-warning: #e46962;
+  --ajd-color-warning-strong: #9a3412;
+  --ajd-color-warning-highlight-bg: #feefe2;
+  --ajd-color-warning-highlight-text: #994d1b;
+  --ajd-color-warning-surface: rgba(249, 222, 220, 0.5);
+  --ajd-color-warning-outline: #fecaca;
+
+  --ajd-color-danger: #dc2626;
+  --ajd-color-danger-strong: #b91c1c;
+  --ajd-color-danger-highlight-bg: #fee2e2;
+  --ajd-color-danger-highlight-text: #991b1b;
+
+  --ajd-color-focus: #4f378b;
+  --ajd-color-focus-inner: #ffffff;
+
+  --ajd-font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --ajd-text-scale: 1;
+
+  --ajd-shadow-1: 0 3px 12px rgba(33, 29, 41, 0.12);
+  --ajd-shadow-2: 0 4px 16px rgba(33, 29, 41, 0.15);
+  --ajd-shadow-3: 0 8px 12px rgba(33, 29, 41, 0.15);
+}
+
+[data-ajd-contrast='high'] {
+  --ajd-color-primary: #4a2f86;
+  --ajd-color-primary-hover: #3d2670;
+  --ajd-color-primary-active: #2f1d57;
+  --ajd-color-highlight-bg: #ffffff;
+  --ajd-color-highlight-text: #2f1d57;
+  --ajd-color-primary-soft: #ffffff;
+
+  --ajd-color-surface: #ffffff;
+  --ajd-color-surface-raised: #ffffff;
+  --ajd-color-surface-sunken: #ffffff;
+  --ajd-color-text-primary: #000000;
+  --ajd-color-text-secondary: #1a1a1a;
+  --ajd-color-outline: #000000;
+  --ajd-color-outline-strong: #000000;
+  --ajd-color-overlay-photo: rgba(255, 255, 255, 0.95);
+
+  --ajd-color-warning: #7a2b1e;
+  --ajd-color-warning-strong: #7a2b1e;
+  --ajd-color-warning-highlight-bg: #ffffff;
+  --ajd-color-warning-highlight-text: #7a2b1e;
+  --ajd-color-warning-surface: #ffffff;
+  --ajd-color-warning-outline: #000000;
+
+  --ajd-color-danger: #a80000;
+  --ajd-color-danger-strong: #8b0000;
+  --ajd-color-danger-highlight-bg: #ffffff;
+  --ajd-color-danger-highlight-text: #8b0000;
+
+  --ajd-shadow-1: 0 0 0 2px #000000;
+  --ajd-shadow-2: 0 0 0 2px #000000;
+  --ajd-shadow-3: 0 0 0 2px #000000;
+}
+
+:root[data-ajd-text='large'] {
+  --ajd-text-scale: 1.15;
+  font-size: 18px;
+}
+
+:root[data-ajd-text='compact'] {
+  --ajd-text-scale: 0.9;
+  font-size: 14px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  font-family: var(--ajd-font-family);
+  color: var(--ajd-color-text-primary);
+}
+
+.ajd-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+:focus-visible {
+  outline: 3px solid var(--ajd-color-focus);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 1px var(--ajd-color-focus-inner);
+}
+
+/* Leaflet overrides para combinar com o estilo mobile-first */
+.leaflet-container {
+  font-family: var(--ajd-font-family);
+  background: #ecebe5;
+}
+
+.leaflet-control-attribution {
+  font-size: 9px !important;
+  opacity: 0.7;
+}
