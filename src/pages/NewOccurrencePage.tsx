@@ -126,7 +126,7 @@ export const NewOccurrencePage: React.FC = () => {
       {/* Formulário rolável */}
       <form
         onSubmit={handleSubmit}
-        className="flex flex-1 flex-col gap-4 overflow-y-auto px-4 pb-6 pt-3"
+        className="flex flex-1 flex-col gap-4 overflow-y-auto px-4 pb-[128px] pt-3"
       >
         {/* Identidade e privacidade (Figma 1083:539) */}
         <div className="flex flex-col gap-2">
@@ -369,16 +369,16 @@ export const NewOccurrencePage: React.FC = () => {
           type="submit"
           className="mt-1 flex h-11 w-full cursor-pointer items-center justify-center gap-2 rounded-[24px] bg-[var(--ajd-color-primary)] px-4 text-[14px] font-medium text-white shadow-[var(--ajd-shadow-1)] transition-colors hover:bg-[var(--ajd-color-primary-hover)] active:scale-[0.99]"
         >
-          <Icon name="material/send" size={20} />
+          <Icon name="material/send" size={40} />
           <span>Publicar Alerta no Feed</span>
         </button>
       </form>
 
-      {/* Botão flutuante de acessibilidade */}
-      <AccessibilityFab className="absolute bottom-[128px] right-4 z-30" />
+      {/* Botão flutuante de acessibilidade (16px = 8*2px acima da NavBar de 116px) */}
+      <AccessibilityFab className="absolute bottom-[132px] right-4 z-30" />
 
       {/* NavBar com Feed ativo */}
-      <div className="bg-[#fffbfe] pt-1">
+      <div className="absolute inset-x-0 bottom-0 z-20 flex justify-center">
         <NavBar active="feed" />
       </div>
     </div>

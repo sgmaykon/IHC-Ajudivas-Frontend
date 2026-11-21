@@ -6,14 +6,17 @@ export interface AccessibilityFabProps {
   className?: string;
 }
 
+const HAS_POSITION_CLASS = /(?:^|\s)(?:static|relative|absolute|fixed|sticky)(?=\s|$)/;
+
 /**
  * Botão azul de acessibilidade do Figma (node 1214:1183) que abre a AccessibilityToolbar.
  */
 export const AccessibilityFab: React.FC<AccessibilityFabProps> = ({ className = '' }) => {
   const [open, setOpen] = useState(false);
+  const positionClass = HAS_POSITION_CLASS.test(className) ? '' : 'relative';
 
   return (
-    <div className={`relative ${className}`.trim()}>
+    <div className={`${positionClass} w-fit ${className}`.trim()}>
       <button
         type="button"
         aria-expanded={open}
